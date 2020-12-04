@@ -1,13 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import {BrowserRouter as Router, Route, Switch, Redirect, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import App from './App';
+import Notas from './Notas';
 import Login from './Login';
 
 const useStyles = makeStyles((theme) => ({
@@ -62,6 +64,17 @@ const useStyles = makeStyles((theme) => ({
                 width: '20ch',
             },
         },
+    },
+    link: {
+        color: "white",
+        textDecoration: 'none',
+        '&:hover': {
+            color: 'yellow',
+            transitionDuration: '0.5s',
+        },
+        '&:active': {
+            color: "white",
+        }
     }
 }));
 
@@ -82,16 +95,16 @@ export default function Header() {
                     </IconButton>
                     <Router>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            <Link to={'/'} className="link">Inicio</Link>
+                            <Link to='/' className={classes.link}>Inicio</Link>
                         </Typography>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            <Link to='/misNotas' className="link">Mis notas</Link>
+                            <Link to='/misNotas' className={classes.link}>Mis notas</Link>
                         </Typography>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            <Link to='/login'>Compartidas</Link>
+                            <Link to='/login' className={classes.link}>Login</Link>
                         </Typography>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            <Link to={'/miPerfil'} className="link">Mi Perfil</Link>
+                            <Link to='/miPerfil' className={classes.link}>Mi Perfil</Link>
                         </Typography>
                     </Router>
                     <div className={classes.search}>
@@ -99,12 +112,12 @@ export default function Header() {
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="Search…"
+                            placeholder="Busca la nota…"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
-                            inputProps={{ 'aria-label': 'search' }}
+                            inputProps={{ 'aria-label': 'Busca la nota' }}
                         />
                     </div>
                 </Toolbar>

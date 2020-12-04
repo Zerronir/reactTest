@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/axiostest.iml" filepath="$PROJECT_DIR$/.idea/axiostest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/reacttest.iml" filepath="$PROJECT_DIR$/.idea/reacttest.iml" />
     </modules>
   </component>
 </project>
