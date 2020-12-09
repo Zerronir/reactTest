@@ -3,34 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Header from "./Header";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from "./App";
+import Home from "./Home";
 import Login from "./Login";
 import Notas from "./Notas";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Header />
+
       <Router>
-          <div>
-              <Switch>
-                  <Route
-                      path="/"
-                      component={App} />
-                  <Route
-                      path="/login"
-                      component={Login} />
-                  <Route
-                      path="/misNotas"
-                      component={Notas} />
-                  <Route
-                      path="/compartidas"
-                      component={Notas} />
-                  <Route
-                      path="/miPerfil"
-                      component={App} />
-              </Switch>
-          </div>
+          <Header />
+          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/misNotas" exact component={Notas} />
+          <Route path="/miPerfil" exact component={App} />
       </Router>
   </React.StrictMode>,
   document.getElementById('root')

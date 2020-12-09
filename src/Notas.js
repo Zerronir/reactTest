@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {Grid} from "@material-ui/core";
 
 
 // Estilos
@@ -30,12 +31,100 @@ export default function Notas() {
     const bull = <span className={classes.bullet}>•</span>;
 
     return (
-        <Card className={classes.root}>
-            <CardContent>
-                <Typography className={classes.title} gutterBottom>
-                    Título de la nota
-                </Typography>
-            </CardContent>
-        </Card>
+        <Grid container direction={"row"} justify={"space-evenly"} alignItems={"center"} >
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom>
+                        Título de la nota
+                    </Typography>
+                </CardContent>
+            </Card>
+        </Grid>
     )
 }
