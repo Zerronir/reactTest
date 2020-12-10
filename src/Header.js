@@ -93,7 +93,6 @@ export default function Header() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Router>
                         <Typography className={classes.title} variant="h6" noWrap>
                             <Link to='/' className={classes.link}>Inicio</Link>
                         </Typography>
@@ -106,7 +105,6 @@ export default function Header() {
                         <Typography className={classes.title} variant="h6" noWrap>
                             <Link to='/miPerfil' className={classes.link}>Mi Perfil</Link>
                         </Typography>
-                    </Router>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
@@ -123,5 +121,6 @@ export default function Header() {
                 </Toolbar>
             </AppBar>
         </div>
+
     );
 }

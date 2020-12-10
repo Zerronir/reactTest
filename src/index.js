@@ -5,29 +5,18 @@ import reportWebVitals from './reportWebVitals';
 import Header from "./Header";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import App from "./App";
+import Home from "./Home";
 import Login from "./Login";
 import Notas from "./Notas";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Header />
       <Router>
-          <Switch>
-              <Route
-                  path={"/"} exact component={App} />
-              <Route
-                  path="/login"
-                  exact component={Login} />
-              <Route
-                  path="/misNotas"
-                  exact component={Notas} />
-              <Route
-                  path="/login"
-                  exact component={Login} />
-              <Route
-                  path="/miPerfil"
-                  exact component={App} />
-          </Switch>
+          <Header />
+          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/misNotas" exact component={Notas} />
+          <Route path="/miPerfil" exact component={App} />
       </Router>
   </React.StrictMode>,
   document.getElementById('root')
