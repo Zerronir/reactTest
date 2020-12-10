@@ -21,28 +21,11 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 export default class App extends React.Component {
 
-    constructor() {
-        super();
-
-        this.state = {
-            loggedInStatus: "NOT_LOGGED_IN",
-            infoToServer: {
-              email: '',
-              password: ''
-            },
-            user:{
-                name: ''
-            }
+    state = {
+        task: {
+            Name: '',
+            Content: ''
         }
-
-        this.valueToState = ({name, value, checked, type}) => {
-            this.setState(() => {
-                return {[name]: type === "checkbox" ? checked : value};
-            });
-        };
-
-        this.handleLogin = this.handleLogin.bind(this);
-
     }
 
     checkLoginStatus() {
@@ -64,32 +47,8 @@ export default class App extends React.Component {
         })
     }
 
-    doLogin(){
-        axios.post()
-    }
-
-    handleEmailChange(e) {
-        this.setState({email: e.target.value});
-    }
-
-    handlePassChange(e){
-        this.setState({password: e.target.value});
-    }
-
-    handleLogin() {
-        /*this.setState({
-            loggedInStatus: "LOGGED_IN",
-            user: data.user
-        })*/
-
-        axios.get("http://127.0.0.1:8000/api/doLogin", {
-            email: this.state.email,
-            pass: this.state.password
-        })
-            .then(response => {
-                console.log(response)
-            })
-
+    createTask(){
+        axios.post("")
     }
 
     componentDidMount() {
@@ -100,24 +59,21 @@ export default class App extends React.Component {
     return(
         <div className="FormContainer">
             <Grid container direction={"column"} justify={"space-evenly"} alignItems={"center"}>
-                <pre>{JSON.stringify(this.state, null, 2)}</pre>
                 <form action="http://127.0.0.1:8000/api/doLogin">
                     <FormControl>
                         <TextField
-                            label={"Nombre"}
-                            name="email"
+                            label={"Name"}
+                            name="Name"
                             defaultValue={""}
                             size={"small"}
-                            onChange={event => this.valueToState(event.target)}
                         />
                         <TextField
-                            label={"Contraseña"}
-                            name="password"
+                            label={"Content"}
+                            name="Content"
                             defaultValue={""}
                             size={"small"}
-                            onChange={event => this.valueToState(event.target)}
                         />
-                        <Button variant="contained" color="primary" onClick={this.handleLogin}>
+                        <Button variant="contained" color="primary" onClick={this.createTask}>
                             Iniciar sesión
                         </Button>
                     </FormControl>
